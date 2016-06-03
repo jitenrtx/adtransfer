@@ -1,0 +1,82 @@
+﻿@model IEnumerable<adtransfer.Brand>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="@Url.Content("~/Scripts/views/views.brand.index.js")"></script>
+}
+
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", new object { }, new { @class = "btn btn-info" })
+</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>S. No.</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClientID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AgencyID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BrandManagerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AgencyManagerID)
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        @{
+            int counter = 1;
+        }
+
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@counter</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AgencyID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrandManagerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AgencyManagerID)
+                </td>
+                <td>
+                    <img src="/Images/Edit.png" height="30" alt="Edit Client" />@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    <img src="/Images/view.png" height="30" alt="View Client" />@Html.ActionLink("View", "Details", new { id = item.ID }) 
+                </td>
+            </tr>
+            counter++;
+        }
+
+    </table>
+
+    @*@Html.ActionLink(linkText: "Back To Client", actionName: "Index", controllerName: "Client", routeValues: new { id = 0 }, htmlAttributes: null)*@
+</div>

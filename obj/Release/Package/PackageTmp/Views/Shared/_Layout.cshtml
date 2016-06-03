@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css-admin")
+    @Styles.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/css-admin")
+    
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <!-- Header. Status part -->
+        <div id="header-status">
+            <div class="container_12">
+                <div class="grid_8">
+                    &nbsp;
+                </div>
+                <div class="grid_4">
+                    <a href="" id="logout">
+                        Logout
+                    </a>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div> <!-- End #header-status -->
+        <!-- Header. Main part -->
+        <div id="header-main">
+            <div class="container_12">
+                <div class="grid_12">
+                    <div id="logo">
+                        <ul id="nav">
+                            <li id="current"><a href="">Dashboard</a></li>
+                            <li><a href="~/Client">Client</a></li>
+                            <li><a href="~/Brand">Brand</a></li>
+                            <li><a href="~/Agency">Agency</a></li>
+                            <li><a href="~/Channel">Channels</a></li>
+                            <li><a href="~/Studio">Studio</a></li>
+                            <li><a href="">Re-assign</a></li>
+                            <li><a href="">Subadmin</a></li>
+                        </ul>
+                    </div><!-- End. #Logo -->
+                </div><!-- End. .grid_12-->
+                <div style="clear: both;"></div>
+            </div><!-- End. .container_12 -->
+        </div> <!-- End #header-main -->
+        <div style="clear: both;"></div>
+        <!-- Sub navigation -->
+        @*<div id="subnav">
+                     <div class="container_12">
+                <div class="grid_12">
+                    <ul>
+                        <li><a href="#">link 1</a></li>
+                        <li><a href="#">link 2</a></li>
+                        <li><a href="#">link 3</a></li>
+                        <li><a href="#">link 4</a></li>
+                        <li><a href="#">link 5</a></li>
+                    </ul>
+
+                </div><!-- End. .grid_12-->
+            </div><!-- End. .container_12 -->
+                    <div style="clear: both;"></div>
+                </div>*@ <!-- End #subnav -->
+    </div> <!-- End #header -->
+
+    <div class="wrapper">
+    
+        <div class="container_12">
+            @RenderSection("featured", required: false)
+
+            @RenderBody()
+        </div>
+
+        <div style="clear:both;"></div>
+    </div> <!-- End .container_12 -->
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container_12">
+
+        </div>
+            <div class="container_12">
+                <div class="grid_12">
+                    <!-- You can change the copyright line for your own -->
+                    <div class="">Home | About Us | Our Services | Portfolio | Contact Us</div>
+                </div>
+                <div style="clear:both;"></div>
+            </div> <!-- End #footer -->
+            @RenderSection("scripts", required: false)
+
+        </div>
+</body>
+
+@*<body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">x`
+                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>*@
+</html>

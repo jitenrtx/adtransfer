@@ -1,0 +1,81 @@
+﻿@model adtransfer.BrandManager
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div style="margin-bottom:20px;">
+    @Html.ActionLink("Back", "Index", new object { }, new { @class = "btn btn-info" })
+</div>
+
+<div class="table-responsive table-bordered">
+    <div class="tableHead">Brand Manager</div>
+    <div class="col-sm-3">
+        @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="col-sm-3 labletext">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="col-sm-3">
+        @Html.DisplayNameFor(model => model.Address)
+    </div>
+    <div class="col-md-3 labletext">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="col-sm-3">
+        @Html.DisplayNameFor(model => model.City)
+    </div>
+    <div class="col-md-3 labletext">
+        @Html.DisplayFor(model => model.City)
+    </div>
+
+    <div class="col-sm-3">
+        @Html.DisplayNameFor(model => model.Country)
+    </div>
+    <div class="col-md-3 labletext">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+
+    <div class="col-sm-3">
+        @Html.DisplayNameFor(model => model.PINCode)
+    </div>
+    <div class="col-md-3 labletext">
+        @Html.DisplayFor(model => model.PINCode)
+    </div>
+
+    <div class="col-sm-3">
+        @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="col-md-3 labletext">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="col-sm-3">
+        @Html.DisplayNameFor(model => model.Phone)
+    </div>
+    <div class="col-md-3 labletext">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+    <div class="col-sm-3">
+        @Html.DisplayNameFor(model => model.State)
+    </div>
+    <div class="col-md-3 labletext">
+        @Html.DisplayFor(model => model.State)
+    </div>
+
+    <div class="col-sm-3">
+        @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="col-md-3 labletext">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+</div>
+
+@*<p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.BrandManagerID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+

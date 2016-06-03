@@ -1,0 +1,80 @@
+﻿@model IEnumerable<adtransfer.Agency>
+
+@{
+    ViewBag.Title = "Agency";
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="@Url.Content("~/Scripts/views/views.agency.index.js")"></script>
+}
+
+
+
+
+<h2>Agency</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new object { }, new { @class = "btn btn-info" })
+</p>
+<div class="table-responsive">
+    <table class="table">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PIN)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PIN)
+                </td>
+                @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AgencyID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AgencyID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AgencyID })
+                </td>*@
+                <td>
+                    <img src="/Images/Edit.png" height="30" alt="Edit Client" />@Html.ActionLink("Edit", "Edit", new { id = item.AgencyID }) |
+                    <img src="/Images/view.png" height="30" alt="View Client" />@Html.ActionLink("View", "Details", new { id = item.AgencyID }) |
+                    <img src="/Images/branch_manager.jpg" height="30" alt="Brand Manager" />@Html.ActionLink(linkText: "Brand Manager", actionName: "Index", controllerName: "BrandManager", routeValues: new { id = item.AgencyID, type = 2 }, htmlAttributes: null)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,82 @@
+﻿@model adtransfer.Agency
+
+@{
+    ViewBag.Title = "Details";
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="@Url.Content("~/Scripts/views/views.agency.detail.js")"></script>
+}
+
+<div style="margin-bottom:20px;">
+    @Html.ActionLink("Back", "Index", new object { }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AgencyID }, new { @class = "btn btn-info" })
+
+</div>
+
+<div class="table-responsive table-bordered">
+    <div class="tableHead">Agency Details</div>
+    <fieldset>
+        <table class="table">
+            <tr><td>@Html.DisplayNameFor(model => model.Name)</td><td colspan="3">@Html.DisplayFor(model => model.Name)</td></tr>
+            <tr><td>@Html.DisplayNameFor(model => model.Address)</td><td>@Html.DisplayFor(model => model.Address)</td><td>@Html.DisplayNameFor(model => model.City)</td><td>@Html.DisplayFor(model => model.City)</td></tr>
+            <tr><td>@Html.DisplayNameFor(model => model.State)</td><td>@Html.DisplayFor(model => model.State)</td><td>@Html.DisplayNameFor(model => model.Country)</td><td>@Html.DisplayFor(model => model.Country)</td></tr>
+            <tr><td>@Html.DisplayNameFor(model => model.PIN)</td><td>@Html.DisplayFor(model => model.PIN)</td><td colspan="2"></td></tr>
+        </table>
+    </fieldset>
+</div>
+<div class="table-responsive table-bordered">
+    <div class="tableHead">Brand Manager's Details</div>
+    @{
+        List<adtransfer.PseudoBrandManager> brandManagers = ViewBag.brandManagers;
+    }
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>S. No.</th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Brand Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Address
+                </th>
+                <th></th>
+            </tr>
+            @{
+                int counter = 1;
+            }
+            @foreach (var brandManager in brandManagers)
+            {
+                <tr>
+                    <td>@counter</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => brandManager.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => brandManager.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => brandManager.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => brandManager.Address)
+                    </td>
+                    <td>
+                        @Html.ActionLink(linkText: "View", actionName: "Details", controllerName: "BrandManager", routeValues: new { id = brandManager.BrandManagerID }, htmlAttributes: null)
+                        @*@Html.ActionLink("View", "Details", new { id = brandManager.BrandManagerID })*@
+                    </td>
+                </tr>
+                counter++;
+            }
+
+        </table>
+    </div>
+
+</div>

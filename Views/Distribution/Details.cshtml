@@ -1,0 +1,71 @@
+﻿@model adtransfer.Distribution
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Distribution</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Caption)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Caption)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Keyid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Keyid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Duration)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Duration)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Language)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Language)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Client)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Client)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Agency)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Agency)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Brand)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Brand)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Time)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.DistributionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

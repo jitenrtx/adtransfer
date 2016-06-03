@@ -1,0 +1,162 @@
+﻿@model adtransfer.Channel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Channel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.City)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.City)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.State)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.State)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Country)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PinCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PinCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Logo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Logo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FtpHost)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FtpHost)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Port)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Port)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginCity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginCity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginCountry)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginCountry)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginPinCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginPinCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginPhone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginState)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginState)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChannelLoginPassword)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChannelLoginPassword)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ChannelID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

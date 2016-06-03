@@ -1,0 +1,57 @@
+﻿@model adtransfer.Brand
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Brand</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ClientID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClientID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BrandManagerID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BrandManagerID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AgencyManagerID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AgencyManagerID)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

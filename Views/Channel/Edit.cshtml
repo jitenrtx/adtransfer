@@ -1,0 +1,198 @@
+﻿@model adtransfer.Channel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Channel</legend>
+
+        @Html.HiddenFor(model => model.ChannelID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.City)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.State)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.State)
+            @Html.ValidationMessageFor(model => model.State)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Country)
+            @Html.ValidationMessageFor(model => model.Country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PinCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PinCode)
+            @Html.ValidationMessageFor(model => model.PinCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Logo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Logo)
+            @Html.ValidationMessageFor(model => model.Logo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FtpHost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FtpHost)
+            @Html.ValidationMessageFor(model => model.FtpHost)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Port)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Port)
+            @Html.ValidationMessageFor(model => model.Port)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginID)
+            @Html.ValidationMessageFor(model => model.ChannelLoginID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginName)
+            @Html.ValidationMessageFor(model => model.ChannelLoginName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginAddress)
+            @Html.ValidationMessageFor(model => model.ChannelLoginAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginCity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginCity)
+            @Html.ValidationMessageFor(model => model.ChannelLoginCity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginCountry)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginCountry)
+            @Html.ValidationMessageFor(model => model.ChannelLoginCountry)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginPinCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginPinCode)
+            @Html.ValidationMessageFor(model => model.ChannelLoginPinCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginEmail)
+            @Html.ValidationMessageFor(model => model.ChannelLoginEmail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginPhone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginPhone)
+            @Html.ValidationMessageFor(model => model.ChannelLoginPhone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginState)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginState)
+            @Html.ValidationMessageFor(model => model.ChannelLoginState)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChannelLoginPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChannelLoginPassword)
+            @Html.ValidationMessageFor(model => model.ChannelLoginPassword)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<adtransfer.Client>
+
+@{
+    ViewBag.Title = "Client";
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="@Url.Content("~/Scripts/views/views.client.index.js")"></script>
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", new object { }, new { @class = "btn btn-info" })
+</p>
+<div class="table-responsive table-bordered">
+    <div class="tableHead">View Client</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>S. No.</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.State)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateCreated)
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        @{
+            int counter = 1;   
+        }
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@counter</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+                </td>
+                <td>
+                    <img src="/Images/Edit.png" height="30" alt="Edit Client" />@Html.ActionLink("Edit", "Edit", new { id = item.ClientID }) |
+                    <img src="/Images/view.png" height="30" alt="View Client" />@Html.ActionLink("View", "Details", new { id = item.ClientID }) |
+                    <img src="/Images/branch_manager.jpg" height="30" alt="Brand Manager" />@Html.ActionLink(linkText: "Brand Manager", actionName: "Index", controllerName: "BrandManager", routeValues: new { id = item.ClientID, type = 1 }, htmlAttributes: null)
+                </td>
+            </tr>
+            counter++;
+        }
+
+    </table>
+</div>
+

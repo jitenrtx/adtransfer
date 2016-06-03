@@ -1,0 +1,122 @@
+﻿@model IEnumerable<adtransfer.BrandManager>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="@Url.Content("~/Scripts/views/views.brandmanager.index.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/plugins/jquery.jgrowl.js")"></script>
+}
+
+@if (TempData["success"] != null)
+{
+    <script>
+        $(document).ready(function () {
+            $.jGrowl('@TempData["success"]', { sticky: false, theme: 'growl-success', header: 'Success', life: 500 });
+        });
+    </script>
+}
+
+<p>
+    @if(ViewBag.type == 1)
+    {
+        @Html.ActionLink(linkText: "Back", actionName: "Index", controllerName: "Client", routeValues: new { }, htmlAttributes: new { @class = "btn btn-info" })
+        <script>
+            $('ul#nav li').removeAttr('id');
+            $('ul#nav li:contains("Client")').attr('id', 'current');
+        </script>
+    }
+    else
+    {
+        @Html.ActionLink(linkText: "Back", actionName: "Index", controllerName: "Agency", routeValues: new { }, htmlAttributes: new { @class = "btn btn-info" })
+        <script>
+            $('ul#nav li').removeAttr('id');
+            $('ul#nav li:contains("Agency")').attr('id', 'current');
+        </script>
+    }
+        
+    
+    @Html.ActionLink("Create New", "Create", new { id = ViewBag.clientID, ViewBag.type }, new { @class = "btn btn-info" })
+</p>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>S. No.</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PINCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th></th>
+        </tr>
+        @{
+            int counter = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@counter</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PINCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                    @Html.HiddenFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <img src="/Images/Edit.png" height="30" alt="Edit Client" />@Html.ActionLink("Edit", "Edit", new { id = item.BrandManagerID }) |
+                    <img src="/Images/view.png" height="30" alt="View Client" />@Html.ActionLink("View", "Details", new { id = item.BrandManagerID }) |
+                    <img src="/Images/Edit.png" height="30" alt="Edit Client" />@Html.ActionLink("Inactivate", "Inactivate", new { id = item.BrandManagerID }) 
+                    @*<img src="/Images/Edit.png" height="30" alt="Edit Client" /><a href="#" class="btnInactivate">Inactive</a>*@
+                    @*<img src="/Images/branch_manager.jpg" height="30" alt="Brand Manager" />@Html.ActionLink(linkText: "Brand Manager", actionName: "Index", controllerName: "BrandManager", routeValues: new { id = item.ClientID, type = 1 }, htmlAttributes: null)*@
+
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.BrandManagerID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BrandManagerID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BrandManagerID })*@
+                </td>
+            </tr>
+            counter++;
+        }
+
+    </table>
+</div>
