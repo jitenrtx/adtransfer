@@ -341,29 +341,29 @@ namespace adtransfer.Controllers
         //        }
         //    }
 
-        //    public enum ManageMessageId
-        //    {
-        //        ChangePasswordSuccess,
-        //        SetPasswordSuccess,
-        //        RemoveLoginSuccess,
-        //    }
+        public enum ManageMessageId
+        {
+            ChangePasswordSuccess,
+            SetPasswordSuccess,
+            RemoveLoginSuccess,
+        }
 
-        //    internal class ExternalLoginResult : ActionResult
-        //    {
-        //        public ExternalLoginResult(string provider, string returnUrl)
-        //        {
-        //            Provider = provider;
-        //            ReturnUrl = returnUrl;
-        //        }
+        internal class ExternalLoginResult : ActionResult
+        {
+            public ExternalLoginResult(string provider, string returnUrl)
+            {
+                Provider = provider;
+                ReturnUrl = returnUrl;
+            }
 
-        //        public string Provider { get; private set; }
-        //        public string ReturnUrl { get; private set; }
+            public string Provider { get; private set; }
+            public string ReturnUrl { get; private set; }
 
-        //        public override void ExecuteResult(ControllerContext context)
-        //        {
-        //            OAuthWebSecurity.RequestAuthentication(Provider, ReturnUrl);
-        //        }
-        //    }
+            public override void ExecuteResult(ControllerContext context)
+            {
+                OAuthWebSecurity.RequestAuthentication(Provider, ReturnUrl);
+            }
+        }
 
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {
