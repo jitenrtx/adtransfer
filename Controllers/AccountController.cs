@@ -329,17 +329,17 @@ namespace adtransfer.Controllers
         //    }
 
         #region Helpers
-        //    private ActionResult RedirectToLocal(string returnUrl)
-        //    {
-        //        if (Url.IsLocalUrl(returnUrl))
-        //        {
-        //            return Redirect(returnUrl);
-        //        }
-        //        else
-        //        {
-        //            return RedirectToAction("Index", "Home");
-        //        }
-        //    }
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
 
         public enum ManageMessageId
         {
