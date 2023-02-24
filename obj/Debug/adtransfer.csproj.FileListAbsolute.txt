@@ -176,3 +176,7 @@ E:\Projects\local\ravi_bhandari\adtransfer\bin\System.Net.Http.WebRequest.dll
 E:\Projects\local\ravi_bhandari\adtransfer\bin\System.Net.Http.WebRequest.xml
 D:\Projects\local\ravi_bhandari\adtransfer\bin\Component.dll
 D:\Projects\local\ravi_bhandari\adtransfer\bin\Component.pdb
+E:\Project\adtransfer\obj\Debug\adtransfer.csproj.AssemblyReference.cache
+E:\Project\adtransfer\obj\Debug\adtransfer.csproj.CoreCompileInputs.cache
+E:\Project\adtransfer\obj\Debug\adtransfer.dll
+E:\Project\adtransfer\obj\Debug\adtransfer.pdb
