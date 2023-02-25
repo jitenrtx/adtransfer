@@ -290,43 +290,43 @@ namespace adtransfer.Controllers
         //        return View(model);
         //    }
 
-        //    //
-        //    // GET: /Account/ExternalLoginFailure
+        //
+        // GET: /Account/ExternalLoginFailure
 
-        //    [AllowAnonymous]
-        //    public ActionResult ExternalLoginFailure()
-        //    {
-        //        return View();
-        //    }
+        [AllowAnonymous]
+        public ActionResult ExternalLoginFailure()
+        {
+            return View();
+        }
 
-        //    [AllowAnonymous]
-        //    [ChildActionOnly]
-        //    public ActionResult ExternalLoginsList(string returnUrl)
-        //    {
-        //        ViewBag.ReturnUrl = returnUrl;
-        //        return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
-        //    }
+        [AllowAnonymous]
+        [ChildActionOnly]
+        public ActionResult ExternalLoginsList(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
+        }
 
-        //    [ChildActionOnly]
-        //    public ActionResult RemoveExternalLogins()
-        //    {
-        //        ICollection<OAuthAccount> accounts = OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name);
-        //        List<ExternalLogin> externalLogins = new List<ExternalLogin>();
-        //        foreach (OAuthAccount account in accounts)
-        //        {
-        //            AuthenticationClientData clientData = OAuthWebSecurity.GetOAuthClientData(account.Provider);
+        [ChildActionOnly]
+        public ActionResult RemoveExternalLogins()
+        {
+            ICollection<OAuthAccount> accounts = OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name);
+            List<ExternalLogin> externalLogins = new List<ExternalLogin>();
+            foreach (OAuthAccount account in accounts)
+            {
+                AuthenticationClientData clientData = OAuthWebSecurity.GetOAuthClientData(account.Provider);
 
-        //            externalLogins.Add(new ExternalLogin
-        //            {
-        //                Provider = account.Provider,
-        //                ProviderDisplayName = clientData.DisplayName,
-        //                ProviderUserId = account.ProviderUserId,
-        //            });
-        //        }
+                externalLogins.Add(new ExternalLogin
+                {
+                    Provider = account.Provider,
+                    ProviderDisplayName = clientData.DisplayName,
+                    ProviderUserId = account.ProviderUserId,
+                });
+            }
 
-        //        ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-        //        return PartialView("_RemoveExternalLoginsPartial", externalLogins);
-        //    }
+            ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+            return PartialView("_RemoveExternalLoginsPartial", externalLogins);
+        }
 
         #region Helpers
         private ActionResult RedirectToLocal(string returnUrl)
