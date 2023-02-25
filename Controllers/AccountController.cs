@@ -122,20 +122,20 @@ namespace adtransfer.Controllers
         //        return RedirectToAction("Manage", new { Message = message });
         //    }
 
-        //    //
-        //    // GET: /Account/Manage
+        //
+        // GET: /Account/Manage
 
-        //    public ActionResult Manage(ManageMessageId? message)
-        //    {
-        //        ViewBag.StatusMessage =
-        //            message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-        //            : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
-        //            : message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
-        //            : "";
-        //        ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-        //        ViewBag.ReturnUrl = Url.Action("Manage");
-        //        return View();
-        //    }
+        public ActionResult Manage(ManageMessageId? message)
+        {
+            ViewBag.StatusMessage =
+                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
+                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
+                : message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
+                : "";
+            ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+            ViewBag.ReturnUrl = Url.Action("Manage");
+            return View();
+        }
 
         //
         // POST: /Account/Manage
