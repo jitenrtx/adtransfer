@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/adtransfer/v17/.wsuo
+*.vsidx
+/.vs/adtransfer/FileContentIndex/b1aa98c0-1dc6-4ffc-b79a-5424678ed109.vsidx
+/.vs/slnx.sqlite
+/.vs/adtransfer/FileContentIndex/a28a40b0-73af-43af-a7c4-e95d364ad338.vsidx
