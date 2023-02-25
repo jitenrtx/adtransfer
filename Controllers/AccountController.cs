@@ -48,23 +48,23 @@ namespace adtransfer.Controllers
         //    //
         //    // POST: /Account/LogOff
 
-        //    [HttpPost]
-        //    [ValidateAntiForgeryToken]
-        //    public ActionResult LogOff()
-        //    {
-        //        WebSecurity.Logout();
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogOff()
+        {
+            WebSecurity.Logout();
 
-        //        return RedirectToAction("Index", "Home");
-        //    }
+            return RedirectToAction("Index", "Home");
+        }
 
-        //    //
-        //    // GET: /Account/Register
+        //
+        // GET: /Account/Register
 
-        //    [AllowAnonymous]
-        //    public ActionResult Register()
-        //    {
-        //        return View();
-        //    }
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            return View();
+        }
 
         //    //
         //    // POST: /Account/Register
